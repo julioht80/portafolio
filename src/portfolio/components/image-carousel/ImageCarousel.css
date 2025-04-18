@@ -1,0 +1,39 @@
+.j-carousel {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border-radius: 8px;
+    width: 100%;
+    background-color: #f0f0f0;
+}
+
+.j-carousel img {
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    object-fit: cover;
+}
+
+.j-carousel-button {
+    position: absolute;
+    background: rgba(0, 0, 0, 0.3);
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    z-index: 1;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.j-carousel-button.prev {
+    left: 5px;
+    border-radius: 5px;
+}
+
+.j-carousel-button.next {
+    right: 5px;
+    border-radius: 5px;
+}

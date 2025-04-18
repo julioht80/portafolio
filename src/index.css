@@ -1,0 +1,37 @@
+@import '~bulma/css/bulma.min.css';
+@import '@fortawesome/fontawesome-free/css/all.min.css';
+
+/* fonts */
+@import url('https://fonts.googleapis.com/css2?family=Zain:wght@200;300;400;700;800;900&display=swap');
+
+:root {
+    --bulma-primary-h: 191deg;
+    --bulma-primary-s: 58%;
+    --bulma-primary-l: 22%;
+
+    --bulma-link-h: 188deg;
+    --bulma-link-s: 62%;
+    --bulma-link-l: 27%;
+
+    --bulma-hover-background-l-delta: -10%;
+    --bulma-active-background-l-delta: -15%;
+    --bulma-hover-border-l-delta: 79%;
+
+    --bulma-body-background-color: hsl(0, 0%, 97%);
+    --bulma-scheme-main: hsl(0, 0%, 97%);
+}
+
+[data-theme=dark], .theme-dark {
+    --bulma-body-background-color: hsl(220, 13%, 9%);
+    --bulma-scheme-main: hsl(220deg 13.04% 9.02%);
+}
+
+.button.is-primary {
+    color: #ebecef !important;
+}
+
+.navbar-item.is-active {
+    color: #ebecef !important;
+}
+  
+  

@@ -1,0 +1,22 @@
+.j-portfolio {
+
+    
+    .j-portfolio-img{
+        width: 100%;
+        height: auto;
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: cover;
+    }
+
+    .j-portfolio-icon {
+        margin-right: 20px;
+        display: inline-block;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    
+    .j-portfolio-icon:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+}

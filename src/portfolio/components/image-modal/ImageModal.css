@@ -1,0 +1,10 @@
+.custom-modal .modal-content {
+    width: 80%; /* Aumenta el ancho */
+    max-width: 100%; /* Aumenta el ancho máximo */
+    height: 80vh;   /* Ajusta la altura */
+}
+
+
+.custom-modal .box {
+    height: 95%; /* Asegúrate de que el contenido ocupe todo el espacio */
+}

@@ -1,0 +1,86 @@
+.j-description-content {}
+
+.j-description {
+    font-size: 1em;
+}
+
+.j-image-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1em;
+}
+
+.j-imagen-circular {
+    width: 200px;
+    height: 200px;
+    border: 1px solid black;
+    border-radius: 50%;
+
+    object-fit: cover;
+}
+
+.j-about-json {
+    padding: 1px;
+}
+
+.j-about-img img{
+    width: 630px;
+    animation: fadeIn 2s ease-in-out;
+}
+
+
+
+.j-about-json-key-1 {
+    color: yellow;
+    font-weight: bold;
+}
+
+.j-about-json-key-2 {
+    color: orange;
+    font-weight: bold;
+}
+
+.j-about-json-filed {
+    color: blue;
+    font-weight: bold;
+}
+
+.j-about-json-value {
+    color: brown;
+    font-weight: bold;
+}
+
+.j-about-json-comment {
+    color: green;
+    font-weight: bold;
+}
+
+.j-about-json-const{
+    color: red;
+    font-weight: bold;
+}
+
+.j-about-json-line {
+    display: flex;   
+}
+
+.j-about-json-line:hover {
+    background-color: antiquewhite;
+}
+.j-about-json-dots {
+    color: gray;
+    font-weight: bold;
+}
+
+@keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  

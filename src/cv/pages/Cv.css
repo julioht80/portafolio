@@ -1,0 +1,17 @@
+.j-cv-line {
+    display: flex;
+}
+
+.j-cv-hr {
+    margin-top: 0;
+}
+
+.j-cv-container .j-cv-svg-path{
+    fill: red;
+}
+
+.j-cv-download {
+    top: 10px;
+    position: absolute;
+    right: 3rem;
+}

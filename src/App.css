@@ -1,0 +1,16 @@
+.j-text-right {
+    text-align: right;
+}
+
+.j-w-100 {
+    width: 100%;
+}
+
+.j-hr {
+    margin: 0;
+    padding: 0;
+}
+
+.j-cursor-not-allowed {
+    cursor: not-allowed;
+}
