@@ -1,3 +1,10 @@
+.j-header {
+
+    .js-burger {
+        margin-top: -20px;
+    }
+}
+
 .navbar-item {
     border-radius: 5px;
     height: 40px;
@@ -15,3 +22,13 @@
     margin: 0;
     padding: 0;
 }   
+
+
+/* Estilo para vistas móviles */
+@media (max-width: 1023px) {
+    .navbar-end {
+        margin-right: 16px;
+        justify-content: flex-end; /* Alinea el contenido a la derecha */
+        display: flex; /* Asegura que el contenedor use flexbox */
+    }
+}

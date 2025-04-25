@@ -1,5 +1,5 @@
 import './Layaut.css';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { Outlet, Link } from 'react-router-dom';
 import Switch from '../../components/Switch/Switch.js';
 import Loader from '../../components/Loader/Loader.js';
@@ -9,6 +9,8 @@ function App({ tap, setTap }) {
 
   const location = useLocation();
   const path = location.pathname;
+
+  const [isMenuActive, setIsMenuActive] = useState(false);
 
   useEffect(() => { setTap(path); }, [path, setTap]);
 
@@ -22,22 +24,37 @@ function App({ tap, setTap }) {
                 <div className="navbar-item brand-text">
                   {'JT'}
                 </div>
+                <button
+                  className={`navbar-burger bd-nav-burger js-burger ${isMenuActive ? 'is-active' : ''}`}
+                  aria-label="menu"
+                  aria-expanded={isMenuActive}
+                  onClick={() => setIsMenuActive(!isMenuActive)}
+                  data-target="j-layaut-nav"
+                >
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </button>
               </div>
-              <div id="navbarBasicExample" className="navbar-menu">
+              <div 
+                id="j-layaut-nav" 
+                className={`navbar-menu ${isMenuActive ? 'is-active' : ''}`}
+              >
                 <div className="navbar-start">
-                  <Link className={`navbar-item ${(tap === '/home' || tap === '/') ? 'is-active' : ""}`} to="/home" onClick={()=>{setTap('/home')}}>
+                  <Link className={`navbar-item ${(tap === '/home' || tap === '/') ? 'is-active' : ""}`} to="/home" onClick={()=>{setTap('/home'); setIsMenuActive(false)}}>
                     Inicio
                   </Link>
-                  <Link className={`navbar-item ${tap === '/cv' ? 'is-active' : ""}`}  to="/cv" onClick={()=>{setTap('/cv')}}>
+                  <Link className={`navbar-item ${tap === '/cv' ? 'is-active' : ""}`}  to="/cv" onClick={()=>{setTap('/cv'); setIsMenuActive(false)}}>
                     CV
                   </Link>
-                  <Link className={`navbar-item ${tap === '/portfolio' ? 'is-active' : ""}`}  to="/portfolio" onClick={()=>{setTap('/portfolio')}}>
+                  <Link className={`navbar-item ${tap === '/portfolio' ? 'is-active' : ""}`}  to="/portfolio" onClick={()=>{setTap('/portfolio'); setIsMenuActive(false)}}>
                     portfolio
                   </Link>
-                  <Link className={`navbar-item ${tap === '/skills' ? 'is-active' : ""}`}  to="/skills" onClick={()=>{setTap('/skills')}}>
+                  <Link className={`navbar-item ${tap === '/skills' ? 'is-active' : ""}`}  to="/skills" onClick={()=>{setTap('/skills'); setIsMenuActive(false)}}>
                     Hablidades
                   </Link>
-                  <Link className={`navbar-item ${tap === '/about' ? 'is-active' : ""}`} to="/about" onClick={()=>{setTap('/about')}}>
+                  <Link className={`navbar-item ${tap === '/about' ? 'is-active' : ""}`} to="/about" onClick={()=>{setTap('/about'); setIsMenuActive(false)}}>
                     Sobre mi
                   </Link>
                 </div>
