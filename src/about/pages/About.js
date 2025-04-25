@@ -18,7 +18,7 @@ export default function About() {
     const MediaX = () => {
         return (
             <figure className="image j-about-img">
-                <img src={'/img/about/' + currentImage + '.jpg'} alt={currentImage.id} key={currentImage} />
+                <img src={ process.env.PUBLIC_URL + '/img/about/' + currentImage + '.jpg'} alt={currentImage.id} key={currentImage} />
             </figure>
         );
     }

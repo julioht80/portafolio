@@ -15,15 +15,27 @@ export default function ImageCarousel({ images, onClickImage, height = '100%' })
 
     return (
         <div className="j-carousel" style={{ height: height }}>
-            <button className="j-carousel-button prev" onClick={prevImage}>
-                &#8249;
-            </button>
+            {
+                images.length > 1 ?
+                <button className="j-carousel-button prev" onClick={prevImage}>
+                    &#8249;
+                </button>
+                :
+                null
+            }
+            
             <figure className="is-4by3">
-                <img src={images[currentIndex]} alt={`Slide ${currentIndex + 1}`} onClick={onClickImage} />
+            <img src={process.env.PUBLIC_URL + images[currentIndex]} alt={`Slide ${currentIndex + 1}`} onClick={onClickImage} />
             </figure>
-            <button className="j-carousel-button next" onClick={nextImage}>
-                &#8250;
-            </button>
+            {
+                images.length > 1 ?
+                <button className="j-carousel-button next" onClick={nextImage}>
+                    &#8250;
+                </button>
+                :
+                null
+            }
+            
         </div>
     );
 

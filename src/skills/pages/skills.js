@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import 'bulma/css/bulma.min.css';
 import './skills.css';
 
@@ -59,6 +59,8 @@ const skills = [
 
 export default function Skills() {
 
+    const [show, setShow] = useState(false);
+
     const getColorProgress = (progress) => {
         if (progress >= 80) {
             return 'is-success';
@@ -69,20 +71,32 @@ export default function Skills() {
         }
     }
 
+    useEffect(() => {
+        setShow(true);
+    }, []);
+
     return (
         <section className="section">
-            <div className="container">
+            <div className="container j-skills">
                 {skills.map((skillGroup, index) => (
-                    <div key={index} className='mb-6'>
+                    <div 
+                        key={index} 
+                        className={`mb-6 j-skills-group ${show ? 'animate' : ''}`}
+                        style={{ transitionDelay: `${index*250}ms` }} 
+                    >
                         <h2 className="title">{skillGroup.group}</h2>
                         <div className="columns is-multiline">
                             {skillGroup.items.map((skill, idx) => (
-                                <div className="column is-one-third-tablet is-one-quarter-desktop" key={idx}>
+                                <div 
+                                    className={`column is-one-third-tablet is-one-quarter-desktop j-skills-card ${show ? 'animate' : ''}`}
+                                    style={{ transitionDelay: `${((index*300)+(idx * 150))}ms` }}
+                                    key={idx}
+                                >
                                     <div className="card">
                                         <header className="card-header">
                                             <p className="card-header-title">
                                                 <span className="icon mr-2">
-                                                    <img src={`/img/skills/${skill.icon}.png`} alt={skill.name} /> 
+                                                    <img src={`${process.env.PUBLIC_URL}/img/skills/${skill.icon}.png`} alt={skill.name} /> 
                                                 </span>
                                                 {skill.name}
                                                 <span className="j-text-right j-w-100">{skill.experience} años</span>

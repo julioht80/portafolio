@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import ImageCarousel from '../components/image-carousel/ImageCarousel';
 import ImageModal from '../components/image-modal/ImageModal';
 import { Tooltip } from 'react-tooltip';
@@ -15,7 +15,8 @@ const projects = [
             { name: "Express", icon: "express" },
             { name: "MongoDB", icon: "mongodb" },
             { name: "Google Cloud", icon: "google" },
-            { name: "NGINX", icon: "nginx" }
+            { name: "NGINX", icon: "nginx" },
+            { name: "Jest", icon: "jest" }
         ],
         github: {
             active: false,
@@ -23,6 +24,20 @@ const projects = [
             message: "Por motivos de confidencialidad con el cliente, no es posible compartir el acceso al repositorio.",
         },
         demo: "https://elaleman.adas.mx"
+    },
+    {
+        name: "Portafolio",
+        description: "Aplicación web desarrollada para mostrar mis proyectos y habilidades como desarrollador, utilizando React para la interfaz de usuario y un diseño responsivo que garantiza una experiencia óptima en cualquier dispositivo.",
+        images: ["/img/portfolio/portfolio/1.png"],
+        tecnologies: [
+            { name: "React", icon: "react" },
+            { name: "Bulma Framework", icon: "bulma" }
+        ],
+        github: {
+            active: true,
+            url: "https://github.com/julioht80/portafolio"
+        },
+        demo: "/home"
     }
 ];
 
@@ -30,6 +45,7 @@ const projects = [
 export default function Portfolio() {
     const [selectedImages, setSelectedImages] = useState([]);
     const [isModalOpen, setIsModalOpen] = useState(false);
+    const [show, setShow] = useState(false);
 
     const openModal = (images) => {
         setSelectedImages(images);
@@ -41,16 +57,24 @@ export default function Portfolio() {
         setSelectedImages([]);
     };
 
+    useEffect(() => {
+        setShow(true);
+    }, []);
+
     return (
         <section className="section j-portfolio">
             <div className="container">
                 <h2 className="title">Mis Proyectos</h2>
                 <div className="columns is-multiline">
                     {projects.map((project, index) => (
-                        <div className="column is-one-third" key={index}>
+                        <div 
+                            className={`column is-one-third j-portfolio-project ${show ? 'animate' : ''}`} 
+                            key={index}
+                            style={{ transitionDelay: `${index * 150}ms`}}
+                        >
                             <div className="card">
                                 <div className="card-image">
-                                    <ImageCarousel images={project.images} onClickImage={() => openModal(project.images)} height={"200px"}/>
+                                    <ImageCarousel images={project.images} onClickImage={() => openModal(project.images)} height={"213px"}/>
                                 </div>
                                 <div className="card-content">
                                     <div className="media">
@@ -65,7 +89,7 @@ export default function Portfolio() {
                                     {project.tecnologies.map((tech, idx) => (
                                         <span className="icon j-portfolio-icon" key={idx}>
                                             <img 
-                                                src={`/img/skills/${tech.icon}.png`} 
+                                                src={`${process.env.PUBLIC_URL}/img/skills/${tech.icon}.png`} 
                                                 alt={tech.name} 
                                                 data-tooltip-id={`tooltip-${idx}`}
                                                 data-tooltip-content={tech.name}

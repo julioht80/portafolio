@@ -19,4 +19,15 @@
         transform: translateY(-5px);
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     }
+
+    .j-portfolio-project {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 1s ease, transform 1s ease;
+    }
+      
+    .j-portfolio-project.animate {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }

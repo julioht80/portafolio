@@ -33,9 +33,7 @@ export default function Home() {
                         </div>
                         <div className="column">
                             <figure className="image j-home-img">
-                                <img src="/img/wallpaper5.png" alt="Julio Cesar Hernández De la Torre" />
-                                {/* <img src="/img/IMG_1641.jpg" alt="Julio Cesar Hernández De la Torre" /> */}
-                                {/* <img src="/img/result (3).png" alt="Julio Cesar Hernández De la Torre" /> */}
+                                <img src={process.env.PUBLIC_URL + "/img/wallpaper5.png"} alt="Julio Cesar Hernández De la Torre" />
                             </figure>
                         </div>
                     </div>
