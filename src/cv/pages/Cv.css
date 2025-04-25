@@ -15,3 +15,23 @@
     position: absolute;
     right: 3rem;
 }
+
+.j-cv {
+    .j-cv-skills {
+        display: flex; /* Activa Flexbox */
+        flex-wrap: wrap; /* Permite que los elementos se ajusten a la siguiente línea si no caben */
+        gap: 10px; /* Espaciado entre los elementos */
+        align-items: center; /* Alinea verticalmente los elementos */
+    }
+    
+    .j-cv-skills > div {
+        display: flex;
+        align-items: center; /* Centra verticalmente el icono y el texto */
+        gap: 5px; /* Espaciado entre el icono y el texto */
+    }
+
+    .j-cv-skills-icon{
+        width: 15px;
+        height: 15px;
+    }
+}

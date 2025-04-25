@@ -18,12 +18,19 @@ const projects = [
             { name: "NGINX", icon: "nginx" },
             { name: "Jest", icon: "jest" }
         ],
-        github: {
-            active: false,
-            url: false,
-            message: "Por motivos de confidencialidad con el cliente, no es posible compartir el acceso al repositorio.",
-        },
-        demo: "https://elaleman.adas.mx"
+        links: [
+            {
+                type: "github",
+                text: "GitHub",
+                url: null,
+                message: "Por motivos de confidencialidad con el cliente,\nno es posible compartir el acceso al repositorio."
+            },
+            {
+                type: "demo",
+                text: "Sitio",
+                url: "https://elaleman.adas.mx"
+            }
+        ]
     },
     {
         name: "Portafolio",
@@ -33,11 +40,18 @@ const projects = [
             { name: "React", icon: "react" },
             { name: "Bulma Framework", icon: "bulma" }
         ],
-        github: {
-            active: true,
-            url: "https://github.com/julioht80/portafolio"
-        },
-        demo: "/home"
+        links: [
+            {
+                type: "github",
+                text: "GitHub",
+                url: "https://github.com/julioht80/portafolio"
+            },
+            {
+                type: "demo",
+                text: "Demo",
+                url: "/home"
+            }
+        ]
     }
 ];
 
@@ -60,6 +74,7 @@ export default function Portfolio() {
     useEffect(() => {
         setShow(true);
     }, []);
+
 
     return (
         <section className="section j-portfolio">
@@ -100,28 +115,29 @@ export default function Portfolio() {
                                 </div>
                                 </div>
                                 <footer className="card-footer">
-                                {project.github.active ? (
-                                    <a href={project.github.url} className="card-footer-item" target="_blank" rel="noopener noreferrer">
-                                        <span className="icon">
-                                            <i className="fab fa-github"></i>
-                                        </span>
-                                        GitHub
-                                    </a>
-                                ) : (
-                                    <a className="card-footer-item j-cursor-not-allowed has-text-grey" data-tooltip-id={`tooltip-github-${index}`} data-tooltip-content={project.github.message}>
-                                        <span className="icon">
-                                            <i className="fab fa-github"></i>
-                                        </span>
-                                        GitHub
-                                        <Tooltip id={`tooltip-github-${index}`} place="top" type="dark" effect="solid" />
-                                    </a>
-                                )}
-                                    <a href={project.demo} className="card-footer-item" target="_blank" rel="noopener noreferrer">
-                                        <span className="icon">
-                                            <i className="fas fa-external-link-alt"></i>
-                                        </span>
-                                        Sitio
-                                    </a>
+                                    {project.links.map((link, idx) => (
+                                        (
+                                            <a 
+                                                href={link.url} 
+                                                className={`card-footer-item ${!link.url ? "j-cursor-not-allowed has-text-grey" : ""}`}
+                                                target="_blank" 
+                                                rel="noopener noreferrer" 
+                                                key={idx}
+                                                data-tooltip-id={`tooltip-link-${index}-${idx}`} 
+                                                data-tooltip-content={link.message}
+                                            >
+                                                <span className="icon">
+                                                    {link.type === "github" ? (
+                                                        <i className="fab fa-github"></i>
+                                                    ) : (
+                                                        <i className="fas fa-external-link-alt"></i>
+                                                    )}
+                                                </span>
+                                                {link.text}
+                                                <Tooltip id={`tooltip-link-${index}-${idx}`} place="top" type="dark" effect="solid" />
+                                            </a>
+                                        )
+                                    ))}
                                 </footer>
                             </div>
                         </div>

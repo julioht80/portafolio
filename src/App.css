@@ -14,3 +14,7 @@
 .j-cursor-not-allowed {
     cursor: not-allowed;
 }
+
+.react-tooltip {
+    z-index: 9999 !important;
+}

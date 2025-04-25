@@ -17,9 +17,22 @@ const data = {
             company: 'Medical Minds',
             time: '2019 - Actualidad',
             descrripction: 'Desarrollo de aplicaciones para el sector salud, coach técnico de un equipo de 7 personas, administración de servidores y ambientes productivos.',
+            // skills: [
+            //     'AngularJS', 'Angular', 'React', 'NodeJS', 'MongoDB', 'PostgreSQL', 'Python', 'Django', 'Azure', 
+            //     'Google Cloud', 'Mocha','Chai'
+            // ],
             skills: [
-                'AngularJS', 'Angular', 'React', 'NodeJS', 'MongoDB', 'PostgreSQL', 'Python', 'Django', 'Azure', 
-                'Google Cloud', 'Mocha','Chai'
+                { name: "AngularJS", icon: "angular" },
+                { name: "Angular", icon: "angular" },
+                { name: "React", icon: "react" },
+                { name: "NodeJS", icon: "nodejs" },
+                { name: "MongoDB", icon: "mongodb" },
+                { name: "PostgreSQL", icon: "postgresql" },
+                { name: "Python", icon: "python" },
+                { name: "Django", icon: "django" },
+                { name: "Azure", icon: "azure" },
+                { name: "Google Cloud", icon: "google" },
+                { name: "Jest", icon: "jest" }
             ]
         },
         {
@@ -27,8 +40,18 @@ const data = {
             company: 'Freelance',
             time: 'Enero 2017 - Noviembre 2020',
             descrripction: 'Publicación de aplicaciones propias en Google Play y AppStore, administración de servidores en Google Cloud, envio de notificaciones con Firebase',
+            // skills: [
+            //     'Android', 'Java', 'Firebase', 'Google Cloud', 'NodeJS', 'MongoDB', 'PostgreSQL', 'MySQL'
+            // ]
             skills: [
-                'Android', 'Java', 'Firebase', 'Google Cloud', 'NodeJS', 'MongoDB', 'PostgreSQL', 'MySQL'
+                { name: "Android", icon: "android" },
+                { name: "Java", icon: "java" },
+                { name: "Firebase", icon: "firebase" },
+                { name: "Google Cloud", icon: "google" },
+                { name: "NodeJS", icon: "nodejs" },
+                { name: "MongoDB", icon: "mongodb" },
+                { name: "PostgreSQL", icon: "postgresql" },
+                { name: "MySQL", icon: "mysql" }
             ]
         },
         {
@@ -36,8 +59,16 @@ const data = {
             company: 'Inteligencia Aplicada',
             time: 'Diciembre 2015 - Octubre 2016',
             descrripction: 'Desarrollo de aplicaciones para el sector de seguridad publica. Android Studio, GPS, SQLite, WebView, Transmisión de vídeo por streaming, eventos en tiempo real con Socket.IO., AngularJS',
+            // skills: [
+            //     'Android', 'Java', 'SQLite', 'WebView', 'Socket.IO', 'AngularJS'
+            // ]
             skills: [
-                'Android', 'Java', 'SQLite', 'WebView', 'Socket.IO', 'AngularJS'
+                { name: "Android", icon: "android" },
+                { name: "Java", icon: "java" },
+                { name: "SQLite", icon: "sqlite" },
+                { name: "WebView" },
+                { name: "Socket.IO", icon: "socketio" },
+                { name: "AngularJS", icon: "angular" }
             ]
         },
         {
@@ -45,8 +76,14 @@ const data = {
             company: 'RYNDEM Studios',
             time: 'Mayo 2015 - Diciembre 2015',
             descrripction: 'Desarrollador back-end con Java Spring Framework, Java, SQL Server, Spring Framework, Web serivces',
+            // skills: [
+            //     'Java', 'Spring Framework', 'SQL Server', 'Web Services'
+            // ]
             skills: [
-                'Java', 'Spring Framework', 'SQL Server', 'Web Services'
+                { name: "Java", icon: "java" },
+                { name: "Spring Framework", icon: "spring" },
+                { name: "SQL Server", icon: "sqlserver" },
+                { name: "Web Services" }
             ]
         },
         {
@@ -54,8 +91,14 @@ const data = {
             company: 'Linesoft',
             time: 'Enero 2015 - Mayo 2015',
             descrripction: 'Java Struts 2, MySQL, JavaScript',
+            // skills: [
+            //     'Java', 'Struts 2', 'MySQL', 'JavaScript'
+            // ]
             skills: [
-                'Java', 'Struts 2', 'MySQL', 'JavaScript'
+                { name: "Java", icon: "java" },
+                { name: "Struts 2" },
+                { name: "MySQL", icon: "mysql" },
+                { name: "JavaScript", icon: "js" }
             ]
         },
         {
@@ -63,8 +106,15 @@ const data = {
             company: 'Morelosoft',
             time: 'Enero 2014 - Enero 2015',
             descrripction: 'Node.js, Erlang, MongoDB, Riak Database, Android.',
+            // skills: [
+            //     'Node.js', 'Erlang', 'MongoDB', 'Riak Database', 'Android'
+            // ]
             skills: [
-                'Node.js', 'Erlang', 'MongoDB', 'Riak Database', 'Android'
+                { name: "Node.js", icon: "nodejs" },
+                { name: "Erlang" },
+                { name: "MongoDB", icon: "mongodb" },
+                { name: "Riak Database" },
+                { name: "Android", icon: "android" }
             ]
         }
     ],
@@ -110,9 +160,35 @@ export default function About() {
                             <h4 className="title">{exp.title}</h4>
                             <p className="subtitle">{exp.company} <span className="j-text-right">{exp.time}</span></p>
                             <p>{exp.descrripction}</p>
-                            <p>
-                                {exp.skills.map((skill, idx) => "· " + skill + "          ")} 
-                            </p>
+                            {/* <p>
+                                {exp.skills.map((skill, idx) => (
+                                    <span className="icon j-portfolio-icon" key={idx}>
+                                        <img 
+                                            src={`${process.env.PUBLIC_URL}/img/skills/${skill.icon}.png`} 
+                                        />
+                                        {skill.name} 
+                                    </span>
+                                ))}
+                            </p> */}
+                            <div className="j-cv-skills">
+                                {exp.skills.map((skill, idx) => (
+                                    <div className="j-cv-skills">
+                                        <span className="icon j-cv-skills-icon" key={idx}>
+                                            {
+                                                skill.icon ?
+                                                <img 
+                                                    src={`${process.env.PUBLIC_URL}/img/skills/${skill.icon}.png`} 
+                                                    alt={skill.name}
+                                                />
+                                                : ''
+                                            }
+                                            
+                                        </span>
+                                        {skill.name} {idx < exp.skills.length - 1 ? " ·" : ""}
+                                    </div>
+                                ))}
+                            </div>
+                            
                         </div>
                     ))}
                     <hr/>
