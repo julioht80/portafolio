@@ -20,7 +20,7 @@ function App({ tap, setTap }) {
             <nav className="navbar" role="navigation" aria-label="main navigation">
               <div className="navbar-brand">
                 <div className="navbar-item brand-text">
-                { 'JT' }
+                  {'JT'}
                 </div>
               </div>
               <div id="navbarBasicExample" className="navbar-menu">
