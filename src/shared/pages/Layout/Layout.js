@@ -25,7 +25,7 @@ function App({ tap, setTap }) {
               </div>
               <div id="navbarBasicExample" className="navbar-menu">
                 <div className="navbar-start">
-                  <Link className={`navbar-item ${tap === '/home' ? 'is-active' : ""}`} to="/home" onClick={()=>{setTap('/home')}}>
+                  <Link className={`navbar-item ${(tap === '/home' || tap === '/') ? 'is-active' : ""}`} to="/home" onClick={()=>{setTap('/home')}}>
                     Inicio
                   </Link>
                   <Link className={`navbar-item ${tap === '/cv' ? 'is-active' : ""}`}  to="/cv" onClick={()=>{setTap('/cv')}}>
