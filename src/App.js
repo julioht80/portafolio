@@ -1,12 +1,14 @@
 import './App.css';
 import { useState } from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { BrowserRouter as BrowserRouter, Route, Routes } from 'react-router-dom';
 import Layout from './shared/pages/Layout/Layout.js';
 import About from './about/pages/About.js';
 import Home from './home/pages/Home.js';
 import Cv from './cv/pages/Cv.js';
 import Portfolio from './portfolio/pages/Portfolio.js';
 import Skills from './skills/pages/skills.js';
+
+const basename = process.env.NODE_ENV === 'production' ? '/portafolio' : '/';
 
 
 function App() {
@@ -15,7 +17,7 @@ function App() {
 
 
   return (
-    <Router>
+    <BrowserRouter basename={basename}>
       <Routes>
         <Route path="/" element={<Layout tap={tap} setTap={setTap}/>}>
           <Route index element={<Home />} />
@@ -27,7 +29,7 @@ function App() {
           <Route path="*" element={<Home />} />
         </Route>
       </Routes>
-    </Router>
+    </BrowserRouter>
   );
 }
 

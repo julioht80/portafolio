@@ -12,7 +12,7 @@ export default function Home() {
                     <div className="columns">
                         <div className="column is-full-mobile is-half-tablet is-half-desktop is-flex is-align-items-center">
                             <div className="j-home-about">
-                                <p className='title is-6 mb-0'>Hola, soy test</p>
+                                <p className='title is-6 mb-0'>Hola, soy</p>
                                 <h3 className="title is-1 mb-2">Julio De la Torre</h3>
                                 <h3 className="title is-4">
                                     <Writing 
