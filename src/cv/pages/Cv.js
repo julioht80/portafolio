@@ -15,7 +15,7 @@ const data = {
         {
             title: 'Desarrollador Full Stack (MEAN)',
             company: 'Medical Minds',
-            time: '2019 - Actualidad',
+            time: '2016 - Actualidad',
             descrripction: 'Desarrollo de aplicaciones para el sector salud, coach técnico de un equipo de 7 personas, administración de servidores y ambientes productivos.',
             // skills: [
             //     'AngularJS', 'Angular', 'React', 'NodeJS', 'MongoDB', 'PostgreSQL', 'Python', 'Django', 'Azure', 
@@ -120,10 +120,10 @@ const data = {
     ],
     education: [
         {
-            title: 'Ingeniería en Sistemas Computacionales',
-            time: '2009 - 2013',
-            institution: 'Universidad Autónoma del Estado de Morelos',
-            location: 'Cuernavaca, Morelos, Mex'
+            title: 'Ingeniería en Tecnologías de la Información',
+            time: '2011 - 2014',
+            institution: 'Universidad Tecnológica Emiliano Zapata',
+            location: 'Emiliano Zapata, Morelos, Mex'
         }
     ]
 };
@@ -158,7 +158,7 @@ export default function About() {
                     {data.experience.map((exp, index) => (
                         <div key={index} className='mt-5'>
                             <h4 className="title">{exp.title}</h4>
-                            <p className="subtitle">{exp.company} <span className="j-text-right">{exp.time}</span></p>
+                            <p className="subtitle">{exp.company}: <span className="j-text-right">{exp.time}</span></p>
                             <p>{exp.descrripction}</p>
                             {/* <p>
                                 {exp.skills.map((skill, idx) => (

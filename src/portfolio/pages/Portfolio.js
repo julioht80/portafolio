@@ -27,6 +27,7 @@ const projects = [
             },
             {
                 type: "demo",
+                icon: "link",
                 text: "Sitio",
                 url: "https://elaleman.adas.mx"
             }
@@ -51,6 +52,45 @@ const projects = [
                 text: "Demo",
                 url: "/home"
             }
+        ]
+    },
+    {
+        name: "LLDM Himnario & Biblia",
+        description: 'Aplicaciónes móviles para Android para la iglesia de "La Luz Del Mundo" que permite a los usuarios acceder a un himnario y una biblia, alcanzo un maximo de 15,000 usuarios activos y 500 mil descargas.',
+        images: [
+            "/img/portfolio/LLDM/1.png", 
+            "/img/portfolio/LLDM/2.png",
+            "/img/portfolio/LLDM/3.png",
+            "/img/portfolio/LLDM/4.png",
+            "/img/portfolio/LLDM/5.png"
+        ],
+        dates: '2017 - 2021',
+        tecnologies: [
+            { name: "Android", icon: "android" },
+            { name: "Google", icon: "google" },
+            { name: "Publicidad con Adsense", icon: "adsense" }
+        ],
+        links: [
+            {
+                text: "APK",
+                url: "https://apkpure.com/es/lldm-himnario-biblia/ldm.com.himnario",
+                message: "La aplicacion fue dada de baja de Google Play en 2023"
+            }
+        ]
+    },
+    {
+        name: "LLDM Himnario IOS",
+        description: 'Aplicación móvil para IOS del himnario de la iglesia de "La Luz Del Mundo".',
+        images: [
+            "/img/portfolio/LLDM/1.png"
+        ],
+        dates: '2017 - 2021',
+        tecnologies: [
+            { name: "Ionic", icon: "ionic" },
+            { name: "Angular", icon: "angular" },
+            { name: "Publicidad con Adsense", icon: "adsense" }
+        ],
+        links: [
         ]
     }
 ];
@@ -97,6 +137,13 @@ export default function Portfolio() {
                                             <p className="title is-4">{project.name}</p>
                                         </div>
                                     </div>
+                                    {
+                                        project.dates ? (
+                                            <div className="j-portfolio-project-dates">
+                                                {project.dates}
+                                            </div>
+                                        ) : ""
+                                    }
                                     <div className="content">
                                         {project.description}
                                     </div>
@@ -127,11 +174,15 @@ export default function Portfolio() {
                                                 data-tooltip-content={link.message}
                                             >
                                                 <span className="icon">
-                                                    {link.type === "github" ? (
-                                                        <i className="fab fa-github"></i>
-                                                    ) : (
-                                                        <i className="fas fa-external-link-alt"></i>
-                                                    )}
+                                                    {(()=>{
+                                                        if (link.type === "github") {
+                                                            return <i className="fab fa-github"></i>;
+                                                        } else if (link.type === "demo") {
+                                                            return <i className="fas fa-external-link-alt"></i>;
+                                                        } else{
+                                                            return null;
+                                                        }
+                                                    })()}
                                                 </span>
                                                 {link.text}
                                                 <Tooltip id={`tooltip-link-${index}-${idx}`} place="top" type="dark" effect="solid" />

@@ -6,7 +6,6 @@
         height: auto;
         max-width: 100%;
         max-height: 100%;
-        object-fit: cover;
     }
 
     .j-portfolio-icon {
@@ -29,5 +28,12 @@
     .j-portfolio-project.animate {
         opacity: 1;
         transform: translateY(0);
+    }
+
+    .j-portfolio-project-dates {
+        font-size: 14px;
+        color: #888;
+        font-weight: 400;
+        margin-bottom: 5px;
     }
 }

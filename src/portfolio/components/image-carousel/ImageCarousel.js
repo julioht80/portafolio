@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './ImageCarousel.css';
 
-export default function ImageCarousel({ images, onClickImage, height = '100%' }) {
+export default function ImageCarousel({ images, onClickImage, height = '100%', isOpen}) {
 
     const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -12,6 +12,21 @@ export default function ImageCarousel({ images, onClickImage, height = '100%' })
     const prevImage = () => {
         setCurrentIndex((prevIndex) => (prevIndex - 1 + images.length) % images.length);
     };
+
+    useEffect(() => {
+        if(isOpen){
+            document.addEventListener('keydown', (event) => {
+                if (event.key === 'ArrowRight') {
+                    nextImage();
+                }
+                if (event.key === 'ArrowLeft') {
+                    prevImage();
+                }
+            });
+        }
+    }, [isOpen]);
+    
+
 
     return (
         <div className="j-carousel" style={{ height: height }}>
