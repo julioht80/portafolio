@@ -4,7 +4,7 @@ import './skills.css';
 
 const skills = [
     {
-        group: "Frameworks, Tecnologias y Librerías",
+        group: "Frameworks, tecnologías y librerías",
         items: [
             { name: "Angular", experience: 5, progress: 90, icon: "angular" },
             { name: "React", experience: 3, progress: 75, icon: "react" },
@@ -17,12 +17,12 @@ const skills = [
         ]
     },
     {
-        group: "Bases de Datos",
+        group: "Bases de datos",
         items: [
             { name: "MongoDB", experience: 5, progress: 80, icon: "mongodb" },
             { name: "MySQL", experience: 8, progress: 90, icon: "mysql" },
-            { name: "PostgreSQL", experience: 5, progress: 80, icon: "postgresql" },
-            { name: "SQLServer", experience: 8, progress: 90, icon: "sqlserver" },
+            { name: "PostgreSQL", experience: 2, progress: 80, icon: "postgresql" },
+            { name: "SQLServer", experience: 3, progress: 80, icon: "sqlserver" },
             { name: "SQLite", experience: 5, progress: 80, icon: "sqlite" },
         ]
     },
@@ -41,7 +41,7 @@ const skills = [
             { name: "JavaScript", experience: 8, progress: 90, icon: "js" },
             { name: "TypeScript", experience: 5, progress: 80, icon: "ts" },
             { name: "Python", experience: 5, progress: 80, icon: "python" },
-            { name: "Java", experience: 8, progress: 90, icon: "java" },
+            { name: "Java", experience: 3, progress: 90, icon: "java" },
             { name: "HTML", experience: 9, progress: 98, icon: "html" },
             { name: "CSS", experience: 9, progress: 98, icon: "css" },
             { name: "SASS", experience: 9, progress: 98, icon: "sass" },
@@ -50,7 +50,7 @@ const skills = [
     {
         group: "Otros",
         items: [
-            { name: "NGINX", experience: 8, progress: 90, icon: "nginx" }
+            { name: "NGINX", experience: 5, progress: 90, icon: "nginx" }
         ]
     }
 ];

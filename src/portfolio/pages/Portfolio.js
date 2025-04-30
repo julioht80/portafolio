@@ -56,7 +56,7 @@ const projects = [
     },
     {
         name: "LLDM Himnario & Biblia",
-        description: 'Aplicaciónes móviles para Android para la iglesia de "La Luz Del Mundo" que permite a los usuarios acceder a un himnario y una biblia, alcanzo un maximo de 15,000 usuarios activos y 500 mil descargas.',
+        description: 'Desarrollé aplicaciones móviles para Android que permiten a los usuarios acceder fácilmente al himnario y a la Biblia utilizados por la Iglesia "La Luz del Mundo". Estas herramientas facilitaron la consulta de contenidos religiosos desde cualquier lugar, alcanzando un máximo de 15,000 usuarios activos y superando las 500,000 descargas en total.',
         images: [
             "/img/portfolio/LLDM/1.png", 
             "/img/portfolio/LLDM/2.png",

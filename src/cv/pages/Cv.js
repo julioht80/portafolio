@@ -10,7 +10,7 @@ const data = {
         email: "julioht80@gmail.com",
         location: "Cuernavaca, Morelos, Mex"
     },
-    profile: "Desarrollador de software SR con más de 9 años de experiencia en backend y frontend, especializado en JavaScript y Java. Conocimiento en la gestión de servidores y bases de datos. He liderado la restructuración y optimización de sistemas. Destaco por mi habilidad para resolver problemas complejos y trabajar en equipo de manera eficaz.",
+    profile: "Desarrollador de software senior con más de 9 años de experiencia en backend y frontend, especializado en JavaScript y Java. Conocimiento en la gestión de servidores y bases de datos. He liderado la restructuración y optimización de sistemas. Destaco por mi habilidad para resolver problemas complejos y trabajar en equipo de manera eficaz.",
     experience: [
         {
             title: 'Desarrollador Full Stack (MEAN)',
@@ -106,9 +106,6 @@ const data = {
             company: 'Morelosoft',
             time: 'Enero 2014 - Enero 2015',
             descrripction: 'Node.js, Erlang, MongoDB, Riak Database, Android.',
-            // skills: [
-            //     'Node.js', 'Erlang', 'MongoDB', 'Riak Database', 'Android'
-            // ]
             skills: [
                 { name: "Node.js", icon: "nodejs" },
                 { name: "Erlang" },
@@ -121,7 +118,7 @@ const data = {
     education: [
         {
             title: 'Ingeniería en Tecnologías de la Información',
-            time: '2011 - 2014',
+            time: '2011 - 2015',
             institution: 'Universidad Tecnológica Emiliano Zapata',
             location: 'Emiliano Zapata, Morelos, Mex'
         }
@@ -159,7 +156,7 @@ export default function About() {
                         <div key={index} className='mt-5'>
                             <h4 className="title">{exp.title}</h4>
                             <p className="subtitle">{exp.company}: <span className="j-text-right">{exp.time}</span></p>
-                            <p>{exp.descrripction}</p>
+                            <p style={{"font-size": "18px"}}>{exp.descrripction}</p>
                             {/* <p>
                                 {exp.skills.map((skill, idx) => (
                                     <span className="icon j-portfolio-icon" key={idx}>
