@@ -4,21 +4,12 @@ import './skills.css';
 
 const skills = [
     {
-        group: "Servicios en la nube",
-        items: [
-            { name: "Google", experience: 8, progress: 90, icon: "google" },
-            { name: "AWS", experience: 8, progress: 90, icon: "amazon" },
-            { name: "Azure", experience: 8, progress: 90, icon: "azure" },
-            { name: "Firebase", experience: 8, progress: 90, icon: "firebase" },
-        ]
-    },
-    {
         group: "Frameworks, Tecnologias y Librerías",
         items: [
             { name: "Angular", experience: 5, progress: 90, icon: "angular" },
-            { name: "React", experience: 3, progress: 65, icon: "react" },
+            { name: "React", experience: 3, progress: 75, icon: "react" },
             { name: "NodeJS", experience: 7, progress: 90, icon: "nodejs" },
-            { name: "Django", experience: 2, progress: 50, icon: "django" },
+            { name: "Django", experience: 2, progress: 60, icon: "django" },
             { name: "Ionic", experience: 1, progress: 50, icon: "ionic" },
             { name: "Android", experience: 5, progress: 80, icon: "android" },
             { name: "Swift", experience: 0.5, progress: 50, icon: "swift" },
@@ -33,6 +24,15 @@ const skills = [
             { name: "PostgreSQL", experience: 5, progress: 80, icon: "postgresql" },
             { name: "SQLServer", experience: 8, progress: 90, icon: "sqlserver" },
             { name: "SQLite", experience: 5, progress: 80, icon: "sqlite" },
+        ]
+    },
+    {
+        group: "Servicios en la nube",
+        items: [
+            { name: "Google", experience: 7, progress: 90, icon: "google" },
+            { name: "AWS", experience: 1, progress: 50, icon: "amazon" },
+            { name: "Azure", experience: 3, progress: 80, icon: "azure" },
+            { name: "Firebase", experience: 5, progress: 90, icon: "firebase" },
         ]
     },
     {

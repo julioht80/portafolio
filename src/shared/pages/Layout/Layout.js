@@ -49,14 +49,14 @@ function App({ tap, setTap }) {
                     CV
                   </Link>
                   <Link className={`navbar-item ${tap === '/portfolio' ? 'is-active' : ""}`}  to="/portfolio" onClick={()=>{setTap('/portfolio'); setIsMenuActive(false)}}>
-                    portfolio
+                    Portafolio
                   </Link>
                   <Link className={`navbar-item ${tap === '/skills' ? 'is-active' : ""}`}  to="/skills" onClick={()=>{setTap('/skills'); setIsMenuActive(false)}}>
-                    Hablidades
+                    Habilidades
                   </Link>
-                  <Link className={`navbar-item ${tap === '/about' ? 'is-active' : ""}`} to="/about" onClick={()=>{setTap('/about'); setIsMenuActive(false)}}>
+                  {/* <Link className={`navbar-item ${tap === '/about' ? 'is-active' : ""}`} to="/about" onClick={()=>{setTap('/about'); setIsMenuActive(false)}}>
                     Sobre mi
-                  </Link>
+                  </Link> */}
                 </div>
                 <div className="navbar-end">
                   <Switch></Switch>
